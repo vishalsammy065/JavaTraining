@@ -128,8 +128,8 @@ public class SeventeenJuly {
 		randomBand.setBandName("Random Band", singers, guitarists, drummer, keyboard);
 		randomBand.printBandDetails();
 		
-		int linkinParkMem = singersLinkin.length + guitaristsLinkin.length + drummerLinkin.length + keyboardLinkin.length;
-		int randomBandMem = singers.length  + guitarists.length + drummer.length + keyboard.length;
+		int linkinParkMem = bandLinkinPark.countMembers();
+		int randomBandMem = randomBand.countMembers();
 		
 		if(linkinParkMem > randomBandMem)
 			System.out.println(bandLinkinPark.getBandName()+" has more members!");

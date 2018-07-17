@@ -42,4 +42,6 @@ public class Band {
 		}
 	}
 	
+	//create a method to count the members
+	
 }

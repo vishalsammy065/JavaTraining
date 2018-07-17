@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class SeventeenJuly {
-
+	
 	public static void main(String[] args) {
 		
 		int sum = 0, sumEven = 0;
@@ -17,7 +17,6 @@ public class SeventeenJuly {
 		String[] guitarists = {"Arpit", "Vaibhav"};
 		String[] drummer= {"Ankur"};
 		String[] keyboard = {"Anugreh"};
-		
 		
 		//print all the data from an array one by one
 		for(int i = 0; i < array.length; i++) {
@@ -77,7 +76,7 @@ public class SeventeenJuly {
 				guruPos = i.indexOf("Guru") + 1;
 			}
 		}
-		System.out.println(isGuruFound?guruPos:"Not Found");
+		System.out.println(isGuruFound?"Position of Guru is at: "+guruPos:"Not Found");
 		
 		//count the no. of red balls in basket1 and basket 2
 		String[] basket1 = {"Red", "Green", "Blue", "White", "Black"};
@@ -117,7 +116,7 @@ public class SeventeenJuly {
 		//get the company name of emp
 		System.out.println(Employee.getCompanyName());
 		
-		
+	
 		//Band class for Linkin Park Object
 		Band bandLinkinPark = new Band();
 		bandLinkinPark.setBandName( "Linkin Park", singersLinkin, guitaristsLinkin, drummerLinkin, keyboardLinkin);
@@ -137,6 +136,19 @@ public class SeventeenJuly {
 			System.out.println(randomBand.getBandName()+" has more members!");
 		else
 			System.out.println("Both have equal no. of members.");
+		
+		//command line args
+		System.out.println(args.length);
+		for(int i = 0; i < args.length ; i++)
+			System.out.print(args[i] + " ");
+		System.out.println();
+		
+		//to accept 2 int and get sum
+		int sumCmd = 0;
+		for(String str : args) {
+			sumCmd += Integer.parseInt(str);
+		}
+		System.out.println(sumCmd);
 		
 		} //end of main
 	

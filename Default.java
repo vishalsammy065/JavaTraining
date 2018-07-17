@@ -70,7 +70,6 @@ public class Default {
 		//question 10
 		double sal = 55555.55;
 		System.out.println("He saves : "+ (sal - (sal*0.2) + (sal*0.15) - (sal*0.15) - (sal*0.5)));
-		
 		System.out.println(5000 % (650*5));
 		
 		//question 11
@@ -80,7 +79,7 @@ public class Default {
 		for(int i = 10; i <20; i++) {
 			System.out.print((char)i);
 		} 
-
+		
 		//question 13 (ternary op)
 		System.out.println(5>2?2:4); 
 		

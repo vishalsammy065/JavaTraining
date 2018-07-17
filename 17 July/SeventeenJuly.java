@@ -9,6 +9,14 @@ public class SeventeenJuly {
 		int[] array = {20, 27,12,60,76};
 		Integer [] arr = {20, 27,12,60,9};
 		boolean isFound = false;
+		String singersLinkin[] = {"Chester"};
+		String[] guitaristsLinkin = {"Dave", "Brad", "Epic"};
+		String[] drummerLinkin = {"Rob"};
+		String[] keyboardLinkin = {"Mike"};
+		String singers[] = {"Vishal"};
+		String[] guitarists = {"Arpit", "Vaibhav"};
+		String[] drummer= {"Ankur"};
+		String[] keyboard = {"Anugreh"};
 		
 		
 		//print all the data from an array one by one
@@ -110,34 +118,25 @@ public class SeventeenJuly {
 		System.out.println(Employee.getCompanyName());
 		
 		
-		//Band class 
+		//Band class for Linkin Park Object
 		Band bandLinkinPark = new Band();
-		String bandNameLinkin = "Linkin Park";
-		String singersLinkin[] = {"Chester Bennington"};
-		String[] guitaristsLinkin = {"Dave Farrel", "Brad Delson"};
-		String[] drummerLinkin = {"Rob Bordon"};
-		String[] keyboardPlayerLinkin = {"Mike Shinoda"};
-		
-		bandLinkinPark.setBandName( bandNameLinkin, singersLinkin, guitaristsLinkin, drummerLinkin, keyboardPlayerLinkin);
+		bandLinkinPark.setBandName( "Linkin Park", singersLinkin, guitaristsLinkin, drummerLinkin, keyboardLinkin);
 		bandLinkinPark.printBandDetails();
 		
+		//Band class for Random Band Object
 		Band randomBand = new Band();
-		String bandNameRandom = "Random Band";
-		String singers[] = {"Vishal", "Vaibhav"};
-		String[] guitarists = {"Arpit", "Aman"};
-		String[] drummer= {"Ankur"};
-		String[] keyboard = {"Anugreh"};
-		
-		randomBand.setBandName(bandNameRandom, singers, guitarists, drummer, keyboard);
+		randomBand.setBandName("Random Band", singers, guitarists, drummer, keyboard);
 		randomBand.printBandDetails();
 		
-		int linkinParkMem = singersLinkin.length + guitaristsLinkin.length + drummerLinkin.length + keyboardPlayerLinkin.length;
-		int randomBandMem = singers.length  + guitarists.length + drummer.length + keyboard.length + keyboard.length;
+		int linkinParkMem = singersLinkin.length + guitaristsLinkin.length + drummerLinkin.length + keyboardLinkin.length;
+		int randomBandMem = singers.length  + guitarists.length + drummer.length + keyboard.length;
 		
 		if(linkinParkMem > randomBandMem)
 			System.out.println(bandLinkinPark.getBandName()+" has more members!");
-		else
+		else if (linkinParkMem < randomBandMem)
 			System.out.println(randomBand.getBandName()+" has more members!");
+		else
+			System.out.println("Both have equal no. of members.");
 		
 		} //end of main
 	

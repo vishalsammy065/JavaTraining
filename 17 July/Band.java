@@ -41,6 +41,7 @@ public class Band {
 			System.out.println(i);
 		}
 	}
+	
 	public int countMembers() {
 		return this.singers.length + this.guitarists.length + this.drummer.length + this.keyboardPlayer.length;
 	}

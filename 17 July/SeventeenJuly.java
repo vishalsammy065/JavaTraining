@@ -110,6 +110,35 @@ public class SeventeenJuly {
 		System.out.println(Employee.getCompanyName());
 		
 		
+		//Band class 
+		Band bandLinkinPark = new Band();
+		String bandNameLinkin = "Linkin Park";
+		String singersLinkin[] = {"Chester Bennington"};
+		String[] guitaristsLinkin = {"Dave Farrel", "Brad Delson"};
+		String[] drummerLinkin = {"Rob Bordon"};
+		String[] keyboardPlayerLinkin = {"Mike Shinoda"};
+		
+		bandLinkinPark.setBandName( bandNameLinkin, singersLinkin, guitaristsLinkin, drummerLinkin, keyboardPlayerLinkin);
+		bandLinkinPark.printBandDetails();
+		
+		Band randomBand = new Band();
+		String bandNameRandom = "Random Band";
+		String singers[] = {"Vishal", "Vaibhav"};
+		String[] guitarists = {"Arpit", "Aman"};
+		String[] drummer= {"Ankur"};
+		String[] keyboard = {"Anugreh"};
+		
+		randomBand.setBandName(bandNameRandom, singers, guitarists, drummer, keyboard);
+		randomBand.printBandDetails();
+		
+		int linkinParkMem = singersLinkin.length + guitaristsLinkin.length + drummerLinkin.length + keyboardPlayerLinkin.length;
+		int randomBandMem = singers.length  + guitarists.length + drummer.length + keyboard.length + keyboard.length;
+		
+		if(linkinParkMem > randomBandMem)
+			System.out.println(bandLinkinPark.getBandName()+" has more members!");
+		else
+			System.out.println(randomBand.getBandName()+" has more members!");
+		
 		} //end of main
 	
 	} //end of class

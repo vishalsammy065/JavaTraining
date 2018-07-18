@@ -128,11 +128,11 @@ SELECT R.SID  FROM RESERVES R WHERE R.SID = 13 AND r.sid = S.SID
 
 
 --CONSTRAINTS
---1. PRIMARY KEY
+1. PRIMARY KEY
 CREATE TABLE PRODUCT(IDEN INT CONSTRAINT PK1 PRIMARY KEY, NAME VARCHAR2(20)); 
 ALTER TABLE PRODUCT ADD CONSTRAINT PK1 PRIMARY KEY (IDEN);
 
---2. FOREIGN KEY
+2. FOREIGN KEY
 CREATE TABLE CUSTDATA (CUST_IDEN INT CONSTRAINT PK2 PRIMARY KEY , IDEN INT CONSTRAINT FK1 FOREIGN KEY, CUST_NAME VARCHAR2(20)); 
 CREATE TABLE ORDERSTABLE (ORDER_IDEN INT CONSTRAINT PK3 PRIMARY KEY , CUST_ID INTEGER REFERENCES CUSTDATA(CUST_IDEN) , PROD_NAME VARCHAR2(20));
 
@@ -153,11 +153,30 @@ INSERT INTO books VALUES (504 ,102, 'Physics');
 SELECT * FROM authors;
 SELECT * FROM BOOKS;
 
---3. UNIQUE CONSTRAINT
+3. UNIQUE CONSTRAINT
 ALTER TABLE EMP ADD CONSTRAINT UK1 UNIQUE KEY (PHONE_NUMBER);
 
---4. CHECK CONSTRAINTS (DOMAIN INTEGRITY)
+4. CHECK CONSTRAINTS (DOMAIN INTEGRITY)
 ALTER TABLE PERSONS ADD CONSTRANIT CHCK CHECK (GENDER IN ('M', 'F'));
 
---DROPPING CONSTRAINT
+DROPPING CONSTRAINT
 ALTER TABLE PERSONS DROP CONSTRAINT CHCK;
+
+--self joins
+
+insert into empjoin values (1 , 'john' , 2);
+insert into empjoin values (2 , 'peter' , 3);
+insert into empjoin values (3 , 'raj' , 0);
+insert into empjoin values (4 , 'rahim' , 2);
+insert into empjoin values (5 , 'stephan' , 2);
+
+SELECT e.empname AS Emp_name, m.empname AS Man_name FROM empjoin e, empjoin m
+WHERE e.managerId = m.empId;
+
+
+--views : are virtual tables and dont require memory. content taken from main table. 
+
+create view bookView as select book_id, book_name from books;
+
+--read only view
+create view bookView as select book_id, book_name from books with Read only; 

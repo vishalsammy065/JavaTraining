@@ -12,8 +12,8 @@ class NineteenJuly {
 		PackageExample pe = new PackageExample();
 		System.out.println(pe);
 		
-		//implicit type casting
-		Employee emp = new Employee(); //possible 
+		//implicit type casting and dynamic binding
+		Employee emp = new Employee(); //possible
 		Employee empHR = new HR(); //possible 
 		Employee empTech = new Technical(); //possible
 		Technical t = new JavaPM(); //possible

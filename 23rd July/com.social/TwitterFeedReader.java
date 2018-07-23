@@ -7,7 +7,8 @@ public class TwitterFeedReader implements SocialFeedReader{
 		m1.setMessageId(1);
 		m1.setMessageSource("Twitter");
 		m1.setMessageType("String");
-		m1.setMessage("Tweeting this from twitter...");
+		m1.setSender("Vishal");
+		m1.setMessage("Tweeting this");
 		return m1;
 	}
 }

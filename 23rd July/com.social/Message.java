@@ -4,6 +4,13 @@ public class Message {
 	String messageSource;
 	String messageType;
 	String message;
+	String sender;
+	public String getSender() {
+		return sender;
+	}
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
 	public int getMessageId() {
 		return messageId;
 	}

@@ -1,6 +1,11 @@
 import java.sql.*;
 public class JDBCDemo {
 	
+	/*types of drivers
+	 * 1. Bridge
+	 * 2. Native
+	 * 3. Middleware
+	 * 4. Pure Java*/
 	
 	public static void main(String[] args) {
 		try {

@@ -25,13 +25,15 @@ public class PreparedStmtDemo {
 			pstm.setInt(1, id);
 			pstm.setString(2, name);
 			System.out.println("No. of rows affected.. "+pstm.executeUpdate());
-			
+			pstm.close();
 			//deleting
 			String deleteSQL = "DELETE FROM SAILORS WHERE SID = ?";
 			int sidToDelete = Integer.parseInt(br.readLine());
 			PreparedStatement psmt = con.prepareStatement(deleteSQL);
 			psmt.setInt(1, sidToDelete);
 			System.out.println("Deleting row with sid : "+sidToDelete+".. "+psmt.executeUpdate()+" rows affected..");
+			psmt.close();
+			con.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage()); 
 		}

@@ -7,9 +7,24 @@ public class JDBCDemo {
 	 * 3. Middleware
 	 * 4. Pure Java*/
 	
+	/*statement : static sql (hardcoded values)
+	 * prepared statement : dynamic sql (values for queries are obtained at runtime)
+	 * callable statement : for functions and stored procedure
+	 */
+	
+	/*
+	 * executeQuery(String query) : for select statements
+	 * executeUpdate(String query) : for DML statements
+	 * execute(String query) : 
+	 */
+	
+	/* To enter Date 
+	 * Date d = Date.valueOf("01-01-2008");
+	 */
+	
 	public static void main(String[] args) {
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e1) {
 			System.out.println("Unable to find the driver...");
 		}
@@ -30,9 +45,10 @@ public class JDBCDemo {
 				System.out.println("Account Number is : "+rs.getLong(1)+" Cust_ID is : "+rs.getString(2)+" and initial deposit is : "+rs.getLong(3));
 			}
 			rs.close();
+			
 			//inserting into table
 			String insertQuery = "INSERT INTO Sailors VALUES (11, 'Aman')";
-			stmt.executeQuery(insertQuery);
+			System.out.println("Rows affected" + stmt.executeUpdate(insertQuery));
 			
 			//deleting from a table 
 			String deleteQuery = "DELETE FROM Sailors WHERE SID = 11";

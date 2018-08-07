@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+ <!-- auto wiring byName, byType -->
+   <bean id="comp" class="com.deloitte.Computer" autowire="byType">
+   		<property name="brandName" value="DELL"></property>
+   		
+   		<!-- This is DI using setters 
+   		for constructor based DI, use <constructor-arg ref="k"> </constructor-arg>
+   		-->
+   		
+   		<property name ="kb" ref="k"></property>
+   		
+   </bean>
+   
+   <bean id="cpu" class="com.deloitte.CPU">
+   		<property name="cpuName" value="AMD"></property>
+   </bean>
+   
+   <bean id="k" class="com.deloitte.Keyboard">
+   		<property name="keyboardBrand" value="Dell"></property>
+   		<property name="price" value="800.0"></property>
+   </bean>
+</beans>
